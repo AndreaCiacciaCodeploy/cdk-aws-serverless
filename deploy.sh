@@ -1,6 +1,5 @@
 #!/bin/sh
 
-#git commit -m "cdk aws serverless change"
 BASE_STRING=`cat VERSION`
 BASE_LIST=(`echo $BASE_STRING | tr '.' ' '`)
 V_MAJOR=${BASE_LIST[0]}
@@ -15,7 +14,6 @@ if [ "$INPUT_STRING" = "" ]; then
 fi
 echo "Will set new version to be $INPUT_STRING"
 echo $INPUT_STRING > VERSION
-echo "Version $INPUT_STRING:" > tmpfile
 
 git add .
 git commit -m "cdk aws serverless change"
